@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรไฟล์นักศึกษา</title>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        @media (max-width: 767px) {
+            .sidebar.hidden-mobile {
+                transform: translateX(-100%);
+            }
+            .sidebar.visible-mobile {
+                transform: translateX(0);
+            }
+        }
+        .scroll-target {
+            scroll-margin-top: 2rem; /* Adds space above the target section when scrolling */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="md:hidden fixed top-4 left-4 z-50 p-2 bg-white rounded-full shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+    </button>
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <!-- Sidebar / Navigation Menu -->
+        <aside id="sidebar" class="sidebar hidden-mobile fixed inset-y-0 left-0 w-64 md:relative md:w-80 bg-white p-6 md:p-8 shadow-xl z-40 md:shadow-none">
+            <!-- Profile Info in Sidebar -->
+            <div class="flex items-center space-x-4 mb-8">
+                <img src="img/S__11165700.jpg" alt="Profile Picture" class="w-20 h-20 rounded-full object-cover border-4 border-gray-200">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">พิทักษ์ชัย บุรภักดิ์</h1>
+                    <p class="text-sm text-gray-500">นักศึกษาคณะวิศวกรรมศาสตร์</p>
+                    <p class="text-xs text-gray-400">ปีที่ 1</p>
+                </div>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="#profile" class="nav-link block p-3 rounded-xl transition duration-200 hover:bg-gray-100 hover:text-blue-600 font-medium text-gray-700">👤 โปรไฟล์</a></li>
+                    <li><a href="#education" class="nav-link block p-3 rounded-xl transition duration-200 hover:bg-gray-100 hover:text-blue-600 font-medium text-gray-700">🎓 การศึกษา</a></li>
+                    <li><a href="#skills" class="nav-link block p-3 rounded-xl transition duration-200 hover:bg-gray-100 hover:text-blue-600 font-medium text-gray-700">💡 ทักษะ</a></li>
+                    <li><a href="#experience" class="nav-link block p-3 rounded-xl transition duration-200 hover:bg-gray-100 hover:text-blue-600 font-medium text-gray-700">💼 ประสบการณ์</a></li>
+                    <li><a href="#projects" class="nav-link block p-3 rounded-xl transition duration-200 hover:bg-gray-100 hover:text-blue-600 font-medium text-gray-700">💻 โปรเจกต์/ผลงาน</a></li>
+                    <li><a href="#contact" class="nav-link block p-3 rounded-xl transition duration-200 hover:bg-gray-100 hover:text-blue-600 font-medium text-gray-700">📞 ติดต่อ</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-6 md:p-10">
+            <div class="space-y-8 max-w-4xl mx-auto">
+                
+                <!-- Profile Section -->
+                <section id="profile" class="scroll-target bg-white rounded-xl p-6 md:p-8 shadow-md">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">เกี่ยวกับฉัน</h2>
+                    <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                        <img src="img/S__11165700.jpg" alt="Profile Picture" class="w-36 h-36 rounded-full object-cover border-4 border-gray-200 shadow-lg">
+                        <div class="text-center md:text-left">
+                            <h3 class="text-4xl font-extrabold text-gray-900">พิทักษ์ชัย บุรภักดิ์</h3>
+                            <p class="text-lg text-gray-600">นักศึกษาคณะวิศวกรรมศาสตร์</p>
+                            <p class="text-sm text-gray-500 mt-2">มหาวิทยาลัยเทคโนโลยี xyz | ปีที่ 3</p>
+                            <button class="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition duration-300">แก้ไขโปรไฟล์</button>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Education Section -->
+                <section id="education" class="scroll-target bg-white rounded-xl p-6 md:p-8 shadow-md">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">การศึกษา</h2>
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h3 class="text-xl font-semibold text-gray-900">ปริญญาตรี - วิศวกรรมศาสตร์ (สาขาวิศวะคอมพพิวเตอร์)</h3>
+                        <p class="text-gray-600 mt-1">มหาวิทยาลัยกาฬสินธ์ุ
+                        <p class="text-gray-500 mt-1">เกรดเฉลี่ย: 4.00</p>
+                        <p class="text-gray-500 mt-1">ปีการศึกษา: 2568 - ปัจจุบัน</p>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section id="skills" class="scroll-target bg-white rounded-xl p-6 md:p-8 shadow-md">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">ทักษะ</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Skill Item -->
+                        <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <span class="text-xl">💻</span>
+                                <h3 class="font-semibold text-gray-900">การเขียนโปรแกรม</h3>
+                            </div>
+                            <p class="text-gray-600 text-sm">Python, Java, C++, JavaScript</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <!-- Skill Item -->
+                        <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <span class="text-xl">🎨</span>
+                                <h3 class="font-semibold text-gray-900">การออกแบบ</h3>
+                            </div>
+                            <p class="text-gray-600 text-sm">Figma, Adobe XD, Photoshop</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <!-- Skill Item -->
+                        <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <span class="text-xl">🗣️</span>
+                                <h3 class="font-semibold text-gray-900">ภาษาอังกฤษ</h3>
+                            </div>
+                            <p class="text-gray-600 text-sm">สามารถสื่อสารได้ดีทั้งการพูดและการเขียน</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section id="experience" class="scroll-target bg-white rounded-xl p-6 md:p-8 shadow-md">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">ประสบการณ์</h2>
+                    <div class="border-l-4 border-green-500 pl-4 space-y-6">
+                        <div class="relative">
+                            <span class="absolute -left-5 top-0 w-4 h-4 rounded-full bg-green-500"></span>
+                            <h3 class="text-xl font-semibold text-gray-900">ฝึกงานตำแหน่งนักพัฒนาซอฟต์แวร์</h3>
+                            <p class="text-gray-600 mt-1">บริษัท abc จำกัด (ม.ค. 25xx - มิ.ย. 25xx)</p>
+                            <p class="text-gray-500 mt-2">หน้าที่: พัฒนาระบบจัดการข้อมูลลูกค้าโดยใช้ภาษา Python และฐานข้อมูล SQL</p>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -left-5 top-0 w-4 h-4 rounded-full bg-green-500"></span>
+                            <h3 class="text-xl font-semibold text-gray-900">ประธานชมรมคอมพิวเตอร์</h3>
+                            <p class="text-gray-600 mt-1">มหาวิทยาลัยเทคโนโลยี xyz (ปีการศึกษา 25xx)</p>
+                            <p class="text-gray-500 mt-2">หน้าที่: จัดกิจกรรมและเวิร์คช็อปเกี่ยวกับการเขียนโปรแกรมสำหรับนักศึกษา</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="scroll-target bg-white rounded-xl p-6 md:p-8 shadow-md">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">โปรเจกต์และผลงาน</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Project Item -->
+                        <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                            <h3 class="font-semibold text-gray-900 text-lg">ระบบจัดการห้องสมุดออนไลน์</h3>
+                            <p class="text-sm text-gray-600 mt-1">โปรเจกต์รายวิชาการเขียนโปรแกรม</p>
+                            <p class="text-sm text-gray-500 mt-2">ระบบที่ช่วยให้ผู้ใช้สามารถค้นหา ยืม และคืนหนังสือได้ผ่านเว็บไซต์</p>
+                            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800 transition duration-300">ดูรายละเอียด →</a>
+                        </div>
+                        <!-- Project Item -->
+                        <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                            <h3 class="font-semibold text-gray-900 text-lg">การวิเคราะห์ข้อมูลยอดขาย</h3>
+                            <p class="text-sm text-gray-600 mt-1">โครงการวิจัยส่วนตัว</p>
+                            <p class="text-sm text-gray-500 mt-2">ใช้ Python และไลบรารี Pandas ในการวิเคราะห์ข้อมูลยอดขายและสร้างรายงาน</p>
+                            <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800 transition duration-300">ดูรายละเอียด →</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="scroll-target bg-white rounded-xl p-6 md:p-8 shadow-md">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">ติดต่อ</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-1 12H4a2 2 0 01-2-2V6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2z" />
+                            </svg>
+                            <p class="text-gray-600">jrpsn101@gmail.com</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">linkedin.com/in/somchai-profile</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">github.com/somchai-projects</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="text-center text-gray-500 text-sm py-8 border-t border-gray-200 mt-12">
+                    <p>&copy; 2568 พิทักษ์ชัย บุรภักดิ์</p>
+                    <div class="mt-2 space-x-4">
+                        <a href="#" class="hover:underline">ความเป็นส่วนตัว</a>
+                        <span>|</span>
+                        <a href="#" class="hover:underline">ข้อกำหนดการใช้งาน</a>
+                    </div>
+                </footer>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const sidebar = document.getElementById('sidebar');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Toggle sidebar visibility on mobile
+        mobileMenuButton.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden-mobile');
+            sidebar.classList.toggle('visible-mobile');
+        });
+
+        // Smooth scroll to sections and close sidebar on link click
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const targetId = e.target.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                // Close sidebar on mobile after clicking a link
+                if (window.innerWidth < 768) {
+                    sidebar.classList.add('hidden-mobile');
+                    sidebar.classList.remove('visible-mobile');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
